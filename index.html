@@ -4,11 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport"
      content="width=device-width, initial-scale=1, user-scalable=yes">
- 
-  <title>Hello World!</title>
+
+     <title>Let's Hear from the Backend</title>
 </head>
 <body>
-Hello World!
- 
+    <main>
+    <h1>Let's Hear from the Backend</h1>
+    <p>Loading content from the API: <b id="name">...</b></p>
+    </main>
+
+    <script>
+    (async function() {
+        const { text } = await( await fetch(`/api/message`)).json();
+        document.querySelector('#name').textContent = text;
+    }())
+    </script>
 </body>
 </html>
