@@ -1,0 +1,15 @@
+microservice:
+  microserviceId: dii-administration-spa
+staticWebSite:
+  hosts:
+  - hostId: dii-administration-spa
+      host: https://admin.drive-ins.inc
+      visibility: internal
+  location: eastus
+identityServers:
+  audience:  dii-administration
+  real:
+    serverId: dii-internal-users
+  synthetic:
+    serverId: dii-internal-users-synthetic
+providers: [dii-administration-bff]
